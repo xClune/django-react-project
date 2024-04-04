@@ -13,7 +13,7 @@ function ProtectedRoute({children}) {
     // on load run auth function to check the ACCESS_TOKEN
     useEffect(() => {
         auth().catch(() => setIsAuthorized(false))
-    }, [])
+    }, []) 
 
     // tries refresh token 
     // if success sets new ACCESS_TOKEN

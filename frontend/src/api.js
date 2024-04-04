@@ -1,8 +1,8 @@
 // interceptor (using axios)
 // intercept any request check for access and add.
 
-import axios from "axios"
-import ACCESS_TOKEN from "constants.js"
+import axios from "axios";
+import { ACCESS_TOKEN } from "./constants";
 
 const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL
