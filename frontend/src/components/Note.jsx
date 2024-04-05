@@ -1,4 +1,4 @@
-import { useState } from "react";
+import '../styles/Note.css'
 
 function Note({note, onDelete}) {
 
