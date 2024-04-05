@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import api from '../api'
+import Note from '../components/Note'
 
 function Home() {
     const [notes, setNotes] = useState([])
@@ -24,21 +25,21 @@ function Home() {
             .then((res) => {
                 if (res.status === 204) alert('Note deleted successfully!')
                 else alert('Failed to delete note.')
+                getNotes()
             })
             .catch((error) => alert(error))
-        getNotes()
     }
 
     const createNote = (e) => {
         e.preventDefault()
         api
-            .post('/api/notes', {content, title})
+            .post('/api/notes/', {content, title})
             .then((res) => {
                 if (res.status === 201) alert('Note created successfully!')
                 else alert('Failed to create note.')
+                getNotes()
             })
             .catch((error) => alert(error))
-        getNotes()
     }
 
     return (
