@@ -7,8 +7,8 @@ import { ACCESS_TOKEN } from "./constants";
 const apiUrl = "/choreo-apis/djangoreactnotes/backend/rest-api-be2/v1.0"
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL : apiUrl,
-})
+    baseURL: apiUrl
+});
 
 api.interceptors.request.use(
     (config) => {
@@ -24,3 +24,5 @@ api.interceptors.request.use(
 );
 
 export default api
+
+// import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL :
